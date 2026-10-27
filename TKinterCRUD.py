@@ -65,3 +65,16 @@ def on_enter(e):
 def on_leave(e):
     btn_submit["bg"] = "#44475a"
     btn_submit["fg"] = "black"
+
+#======== TAMPILAN GUI=======#
+BG = "#ffe4ec"
+HEADER = "#ff69b4"
+CARD = "#fff5f8"
+TEKS = "#8b1a4a"
+ 
+root = tk.Tk()
+root.title("Prediksi Fakultas Siswa")
+root.geometry("440x600")
+root.configure(bg=BG)
+root.resizable(False, False)
+root.columnconfigure(0, weight=1)
