@@ -39,3 +39,14 @@ def submit_nilai():
     except ValueError:
         messagebox.showerror("Error", "Nilai harus berupa angka!")
         return
+
+    hasil_prediksi = prediksi_fakultas(bio, fis, ing)
+
+    conn = sqlite3.connect("nilai_siswa.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        insert into nilai_siswa (nama_siswa, biologi, fisika, inggris, prediksi_fakultas)
+        values (?, ?, ?, ?, ?)
+    """, (nama, bio, fis, ing, hasil_prediksi))
+    conn.commit()
+    conn.close()
