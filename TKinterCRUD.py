@@ -50,3 +50,10 @@ def submit_nilai():
     """, (nama, bio, fis, ing, hasil_prediksi))
     conn.commit()
     conn.close()
+
+    messagebox.showinfo("Hasil Prediksi", f"Prediksi fakultas: {hasil_prediksi}")
+
+    entry_nama.delete(0, tk.end)
+    entry_bio.delete(0, tk.end)
+    entry_fis.delete(0, tk.end)
+    entry_ing.delete(0, tk.end)
