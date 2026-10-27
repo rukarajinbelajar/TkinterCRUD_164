@@ -78,3 +78,28 @@ root.geometry("440x600")
 root.configure(bg=BG)
 root.resizable(False, False)
 root.columnconfigure(0, weight=1)
+
+header = tk.Frame(root, bg=HEADER)
+header.grid(row=0, column=0, sticky="ew")
+header.columnconfigure(0, weight=1)
+tk.Label(header, text="Prediksi Fakultas", font=("Arial", 20, "bold"),
+         bg=HEADER, fg="white").grid(row=0, column=0, pady=(18, 2))
+tk.Label(header, text="Masukkan nilaimu, temukan fakultas yang cocok",
+         font=("Arial", 10, "italic"), bg=HEADER, fg="#fff0f5").grid(row=1, column=0, pady=(0, 15))
+
+card = tk.Frame(root, bg=CARD, highlightbackground="#ffb6c1", highlightthickness=2)
+card.grid(row=1, column=0, pady=25, padx=30, sticky="ew")
+card.columnconfigure(0, weight=1)
+ 
+ 
+def buat_entry(teks, baris):
+    tk.Label(card, text=teks, font=("Arial", 11, "bold"),
+             bg=CARD, fg=TEKS).grid(row=baris, column=0, pady=(12, 0))
+    entry = tk.Entry(card, width=30, bg="white", fg=TEKS, font=("Arial", 11),
+                     justify="center", bd=0, insertbackground="#ff1493",
+                     highlightthickness=2, highlightbackground="#ffb6c1",
+                     highlightcolor="#ff1493")
+    entry.grid(row=baris + 1, column=0, ipady=5, pady=(3, 0), padx=25)
+    return entry
+ 
+ 
